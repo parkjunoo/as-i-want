@@ -14,6 +14,10 @@ function ProductListPage($target) {
     }
   };
 
+  const goDetailPage = (href) => {
+    console.log(href);
+  };
+
   this.init = async () => {
     this.$page.classList = "ProductListPage";
     this.$page.innerHTML = "<h1>상품목록</h1>";
@@ -25,7 +29,7 @@ function ProductListPage($target) {
     this.productList.forEach((e, idx) => {
       const productPrice = e.price.toLocaleString();
       this.$productList.innerHTML += `
-          <li class="Product">
+          <li class="Product" value="${e.id}">
             <img
               src="${e.imageUrl}"
             />
@@ -37,6 +41,15 @@ function ProductListPage($target) {
     });
     this.$page.appendChild(this.$productList);
     $target.appendChild(this.$page);
+
+    this.$productList.addEventListener("click", (e) => {
+      console.log(e);
+      console.log(e.querySelector("Product"));
+    });
+
+    // const $product = document.getElementsByClassName("Product");
+    // console.log($product);
+    // $product.addEventListener();
   };
 }
 

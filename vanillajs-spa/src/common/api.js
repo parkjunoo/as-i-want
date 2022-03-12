@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:62743/mock/";
+const baseUrl = "http://localhost:62647/mock/";
 
 const getProductList = () => {
   const response = fetch(baseUrl + "/products.json");

@@ -20,13 +20,22 @@ const Text = styled.h1`
   color: red;
 `;
 
+const Input = styled.input.attrs({ required: true, minLength: 10 })`
+  background-color: tomato;
+`;
+
 function App() {
   return (
     <Father>
       <BoxOne>
         <Text> Hellow </Text>
       </BoxOne>
-      <BoxTwo />
+      <BoxTwo>
+        <Input />
+        <Input />
+        <Input />
+        <Input />
+      </BoxTwo>
     </Father>
   );
 }

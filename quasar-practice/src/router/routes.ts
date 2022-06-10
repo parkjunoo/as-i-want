@@ -3,8 +3,11 @@ import { RouteRecordRaw } from 'vue-router';
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+    component: () => import('pages/MainPage.vue'),
+    children: [
+      { path: '/add', component: () => import('pages/AddCard.vue') },
+      { path: '/detail/:id', component: () => import('pages/CardDetail.vue') },
+    ],
   },
 
   // Always leave this as last one,

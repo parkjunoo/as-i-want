@@ -1,11 +1,17 @@
 <template>
-  <router-view />
+  <div>
+    <PageContainer>
+      <router-view />
+    </PageContainer>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import PageContainer from './layouts/PageContainer.vue';
 
 export default defineComponent({
-  name: 'App'
-})
+  components: { PageContainer },
+  name: 'App',
+});
 </script>

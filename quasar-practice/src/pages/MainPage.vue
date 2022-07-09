@@ -1,8 +1,5 @@
 <template>
-  <q-page padding>
-    <q-card> 하이 </q-card>
-    <q-card> 하이 </q-card>
-  </q-page>
+  <q-page padding> </q-page>
 </template>
 
 <script lang="ts">
@@ -14,7 +11,6 @@ export default defineComponent({
   name: 'MainPage',
   components: {},
   setup() {
-    console.log('!!!!!!!');
     const notes = useLocalStrorage();
     const router = useRouter();
     return { notes, router };

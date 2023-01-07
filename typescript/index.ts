@@ -1,0 +1,1 @@
+const my: string = 'hello';

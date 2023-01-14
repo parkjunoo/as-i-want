@@ -1,5 +1,5 @@
-import styles from "../styles/Home.module.css";
-import SubLayout from "../components/SubLayout";
+import SubLayout from "components/SubLayout";
+import Layout from "components/Layout";
 
 export async function getStaticProps() {
   console.log("하이하이");
@@ -12,11 +12,12 @@ export async function getStaticProps() {
 export default function ISR({ time }) {
   return (
     <>
-      <h1 className={styles.title}>{time}</h1>
+      <h1 className="title">{time}</h1>
     </>
   );
 }
-CSR.getLayout = function getLayout(page) {
+
+ISR.getLayout = function getLayout(page) {
   return (
     <Layout>
       <SubLayout>{page}</SubLayout>

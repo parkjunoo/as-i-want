@@ -9,6 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.11",
+    "@mui/material": "^5.14.11",
+    "@mui/styles": "^5.14.11",
     "@notionhq/client": "^2.2.13",
     "next": "12.1.6",
     "react": "latest",

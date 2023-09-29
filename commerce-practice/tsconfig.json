@@ -25,6 +25,9 @@
         "./components/*"
       ],
     },
+    "types": [
+      "@emotion/react/types/css-prop",
+    ],
     "forceConsistentCasingInFileNames": true
   },
   "include": [

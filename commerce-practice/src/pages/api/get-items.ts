@@ -6,26 +6,25 @@ const notion = new Client({
   auth: "secret_3IyHaJCV0hCP4mtdmoZfzTUuZph9hqPZRBMMbLfIyb4",
 });
 
-async function addItem(name: string) {
+async function getItems() {
   try {
-    const response = await notion.pages.create({
-      parent: { database_id: DATABASE_ID },
-      properties: {
-        title: [
-          {
-            text: {
-              content: name,
-            },
-          },
-        ],
-      },
+    const response = await notion.databases.query({
+      database_id: DATABASE_ID,
+      sorts: [
+        {
+          property: "Price",
+          direction: "ascending",
+        },
+      ],
     });
     console.log(response);
+    return response;
   } catch (err) {
     console.error(JSON.stringify(err));
   }
 }
 type Data = {
+  items?: any;
   message: string;
 };
 
@@ -33,14 +32,9 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const { name } = req.query;
-  console.log(name);
-  if (!name) {
-    return res.status(400).json({ message: "Missing name" });
-  }
   try {
-    await addItem(String(name));
-    res.status(200).json({ message: `Success ${name} ` });
+    const response = await getItems();
+    res.status(200).json({ items: response?.results, message: `Success` });
   } catch (error) {
     res.status(500).json({ message: `Error ${error}` });
   }

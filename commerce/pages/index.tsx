@@ -1,13 +1,18 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import Link from "next/link";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">About</Link>
-    </p>
-  </Layout>
-)
+const IndexPage = () => {
+  const clickHandler = () => {
+    fetch("/api/add-item?name=Jacket")
+      .then((response) => response.json())
+      .then((data) => alert(data.message));
+  };
 
-export default IndexPage
+  return (
+    <div>
+      <h1>Hello Next.js 👋</h1>
+      <button onClick={clickHandler}>do This!</button>
+    </div>
+  );
+};
+
+export default IndexPage;

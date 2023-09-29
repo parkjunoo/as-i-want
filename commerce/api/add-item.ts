@@ -8,6 +8,7 @@ const notion = new Client({
 
 async function addItem(name: string) {
   try {
+    console.log("name", name);
     const response = await notion.pages.create({
       parent: { database_id: DATABASE_ID },
       properties: {
@@ -34,6 +35,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const name = req.query;
+  console.log("!!!!!!!!!!!");
   if (!name) {
     return res.status(400).json({ message: "Missing name" });
   }

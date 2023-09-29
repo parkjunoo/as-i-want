@@ -7,7 +7,8 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "next": "latest",
+    "@notionhq/client": "^2.2.13",
+    "next": "12.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

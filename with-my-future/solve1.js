@@ -20,11 +20,7 @@ memo[1][1] = 0;
 memo[1][2] = 1;
 
 function fibonacci(n) {
-  if (n === 0 || n === 1) {
-    return memo[n][0];
-  }
-
-  if (memo[n][0]) {
+  if (memo[n][0] != null || n === 0 || n === 1) {
     return memo[n][0];
   }
 
@@ -37,4 +33,6 @@ function fibonacci(n) {
 
 fibonacci(Number(n));
 
+// node solve1.js 40
+// answer: 63245986 102334155
 console.log(memo[n][1] + " " + memo[n][2]);

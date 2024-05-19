@@ -11,7 +11,7 @@ export default function Home() {
         setProductList(data.items);
       });
   }, []);
-
+  
   const clickHandler = () => {
     if (inputRef.current == null || inputRef.current.value === "") {
       alert("Please enter a name");

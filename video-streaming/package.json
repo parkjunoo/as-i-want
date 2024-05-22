@@ -1,0 +1,18 @@
+{
+  "name": "with-my-future",
+  "version": "1.0.0",
+  "description": "1. - [ ] 영상 스트리밍 기능  2. - [ ] 지연시간 출력  3. - [ ] FFmpeg",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.10",
+    "@ffmpeg/util": "^0.12.1",
+    "express": "^4.19.2",
+    "ws": "^8.17.0"
+  }
+}

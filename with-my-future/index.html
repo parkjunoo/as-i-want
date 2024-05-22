@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Low Latency Video Streaming</title>
+    <title>Video Streaming</title>
     <style>
-        #videoContainer {
+        .videoContainer {
             position: relative;
             width: 640px;
             height: 360px;
@@ -31,18 +31,16 @@
 
         #loadTimeDisplay {
             top: 40px;
-            /* Latency display 아래에 위치 */
         }
     </style>
 </head>
 
 <body>
-    <div id="videoContainer">
+    <div name="videoContainer">
         <video id="videoElement" autoplay></video>
         <div id="latencyDisplay">Latency: <span id="latencyValue">0</span> ms</div>
         <div id="loadTimeDisplay">Load Time: <span id="loadTimeValue">0</span> ms</div>
     </div>
-
     <script src="app.js"></script>
 </body>
 
